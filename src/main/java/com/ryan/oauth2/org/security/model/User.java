@@ -30,7 +30,7 @@ public class User implements UserDetails , Serializable {
     @Column(name = "enabled")
     private boolean enabled;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private final List<UsersAuthorities> authoritiesList = new ArrayList<>();
 
     @Override

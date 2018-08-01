@@ -1,10 +1,13 @@
 package com.ryan.oauth2.org.security.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "authority")
-public class Authority {
+public class Authority implements Serializable {
+
+    private static final long serialVersionUID = -3257581232010544976L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
