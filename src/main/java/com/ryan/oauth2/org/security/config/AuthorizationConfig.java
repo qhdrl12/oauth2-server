@@ -58,7 +58,6 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         //Client 에 대한 정보를 설정하는 부분
-        System.out.println("client : " + clients);
         clients.jdbc(dataSource);
     }
 

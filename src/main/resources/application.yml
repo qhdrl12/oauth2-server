@@ -1,0 +1,29 @@
+spring:
+  security:
+    oauth2:
+      client:
+        client-id: foo
+        client-secret: bar
+        registration:
+          facebook:
+            client-id: ${MY_FACEBOOK_CLIENT_ID}
+            client-secret: ${MY_FACEBOOK_CLIENT_SECRET}
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: ${AWS_RYAN_JDBC_URL}
+    username: ${AWS_RYAN_USERNAME}
+    password: ${AWS_RYAN_PASSWORD}
+  jpa:
+    show-sql: true
+    open-in-view: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDB53Dialect
+
+logging:
+  level:
+    org.springframework.security: DEBUG
