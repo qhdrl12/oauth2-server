@@ -3,7 +3,6 @@ package com.ryan.oauth2.org.security.config;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -52,7 +51,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         //OAuth2 인증서버 자체의 보안을 설정하는 부분
-        security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated").passwordEncoder(oauthClientPasswordEncoder);
+        security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()").passwordEncoder(oauthClientPasswordEncoder);
     }
 
     @Override
